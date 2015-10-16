@@ -6,7 +6,7 @@ $(document).ready(function() {
   $('button').click(function(evt) {
     evt.preventDefault();
     $.ajax({
-      url: 'http://localhost:1337/search',
+      url: '/search',
       type: 'GET',
       data: requestData,
       success: function(res) {
@@ -57,7 +57,7 @@ $(document).ready(function() {
     onSelect: function(suggestion) {
       requestData = suggestion.data;
       $.ajax({
-        url: 'http://localhost:1337/search',
+        url: '/search',
         type: 'GET',
         data: requestData,
         success: function(res) {
