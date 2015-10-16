@@ -35,7 +35,8 @@ module.exports.routes = {
   '/': {
     view: 'layout'
   },
-  'GET /search': 'SongController.search'
+  'GET /search': 'SongController.search',
+  '/search/advanced': 'SongController.advancedSearch'
 
 
   /***************************************************************************

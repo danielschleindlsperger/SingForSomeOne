@@ -17,16 +17,17 @@ html(lang="en")
             div.row
               div.small-12.columns
                 button(type='submit').button.small Request Lyrics
+                a(href='/search/advanced' alt='advanced search').button.small Advanced Search
     div.row.offset
-      div.small-12.large-2.columns
+      div.small-12.large-3.columns
         img.img-responsive.center-block.album-img
         audio(id='player', src='')
-          p. Your browser does not support the audio element.
+          p. Your browser does not support the Spotify preview audio element.
         form(name='volume')
-          button.button.play-pause Play/Pause
+          button.button.play-pause Play/Pause Preview
           input(id='volume', type='range', value='25', min='0', max='100', step='1')
           label(for='volume') Volume
-      div.small-12.large-6.large-centered.columns
+      div.small-12.large-9.columns
           p.lyrics
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
     script(src='/js/global.js')

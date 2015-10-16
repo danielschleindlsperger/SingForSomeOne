@@ -20,6 +20,9 @@ var SongController = {
       console.log(err);
       return res.send("Can't find lyrics");
     });
+  },
+  advancedSearch: function(req, res){
+    return res.send('Feature coming soon!');
   }
 };
 module.exports = SongController;

@@ -6,7 +6,6 @@ $(document).ready(function() {
 
   // Player play/pause toggle on button click
   $('.play-pause').click(function() {
-    console.log("click");
     if (isPlaying === false) {
       player.play();
     } else {
