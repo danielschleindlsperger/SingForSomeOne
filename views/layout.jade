@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    title SingForSomeone
+    meta(name='viewport', content='width=device-width', initial-scale='1')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css')
+    link(rel='stylesheet', href='/styles/style.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans', type='text/css')
+  body
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='/js/global.js')
+    script(src='/js/jquery.autocomplete.js')
+    div.row
+      div.small-12.columns
+        form(name='search')
+            div.row
+              div.small-12.columns
+                label(for='song-search') Search for a Song
+                input(type='text' name='song' placeholder='All Along The Watchtower' id='song-search' class='form-control')
+            div.row
+              div.small-12.columns
+                button(type='submit').button.small Request Lyrics
+    div.row.offset
+      div.small-12.large-2.columns
+        img.img-responsive.center-block.album-img
+      div.small-12.large-6.large-centered.columns
+          p.lyrics
