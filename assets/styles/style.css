@@ -5,10 +5,17 @@ body {
 a {
   color: #00B7FF;
 }
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
 p.lyrics {
   font-size: 2rem;
   line-height: 3rem;
-  font-weight: bold;
+}
+album-img, #volume {
+  width: 100%;
 }
 .offset {
   margin-top: 2rem;

@@ -3,14 +3,14 @@ $(document).ready(function() {
   $(document).on('click', 'input[type=text]', function() {
     this.select();
   });
-  $('button').click(function(evt) {
+  $('form[name="search"] button').click(function(evt) {
     evt.preventDefault();
     $.ajax({
       url: '/search',
       type: 'GET',
       data: requestData,
       success: function(res) {
-        $('.lyrics').html(escapeJSON(res));
+        $('.lyrics').append(escapeJSON(res));
         console.log("response: ");
         console.log(res);
       },
@@ -61,9 +61,8 @@ $(document).ready(function() {
         type: 'GET',
         data: requestData,
         success: function(res) {
-          $('.lyrics').html(escapeJSON(res));
-          console.log("response: ");
-          console.log(res);
+          var currentLyrics = escapeJSON(res);
+          $('.lyrics').append(currentLyrics);
         },
         error: function(res) {
           console.log('There was an error');
@@ -73,9 +72,14 @@ $(document).ready(function() {
         src: suggestion.data.albumImg,
         alt: suggestion.data.albumName
       });
+      $('#player').attr({
+        src: suggestion.data.previewUrl
+      });
+      $('.lyrics').html("<h2>'" + suggestion.data.songName + "' - " + suggestion.data.artistName);
     }
   });
 });
+
 // escape newlines for display in browser
 function escapeJSON(json) {
   return json.replace(/\n/g, "<br>");

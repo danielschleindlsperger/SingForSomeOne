@@ -7,9 +7,6 @@ html(lang="en")
     link(rel='stylesheet', href='/styles/style.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans', type='text/css')
   body
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
-    script(src='/js/global.js')
-    script(src='/js/jquery.autocomplete.js')
     div.row
       div.small-12.columns
         form(name='search')
@@ -23,5 +20,15 @@ html(lang="en")
     div.row.offset
       div.small-12.large-2.columns
         img.img-responsive.center-block.album-img
+        audio(id='player', src='')
+          p. Your browser does not support the audio element.
+        form(name='volume')
+          button.button.play-pause Play/Pause
+          input(id='volume', type='range', value='25', min='0', max='100', step='1')
+          label(for='volume') Volume
       div.small-12.large-6.large-centered.columns
           p.lyrics
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='/js/global.js')
+    script(src='/js/audioplayer.js')
+    script(src='/js/jquery.autocomplete.js')
