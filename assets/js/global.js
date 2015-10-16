@@ -3,8 +3,10 @@ $(document).ready(function() {
   $(document).on('click', 'input[type=text]', function() {
     this.select();
   });
-  $('form[name="search"] button').click(function(evt) {
+  $('button').click(function(evt){
     evt.preventDefault();
+  });
+  $('form[name="search"] button').click(function() {
     $.ajax({
       url: '/search',
       type: 'GET',
