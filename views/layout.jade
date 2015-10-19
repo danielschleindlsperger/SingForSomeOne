@@ -14,7 +14,7 @@ html(lang="en")
             div.row
               div.small-12.columns
                 label(for='song-search') Search for a Songname or Artist
-                input(type='text' name='song' placeholder="'Piano Man' or 'Billy Joel'" id='song-search' class='form-control')
+                input(type='text', name='song', placeholder="'Piano Man' or 'Billy Joel'", id='song-search', class='form-control')
             div.row
               div.small-12.columns
                 button(type='submit').button.small Request Lyrics
@@ -22,7 +22,7 @@ html(lang="en")
     div.row.offset
       div.small-12.large-3.columns
         img.img-responsive.center-block.album-img
-        audio(id='player', src='')
+        audio(id='player', src='', preload="auto")
           p. Your browser does not support the Spotify preview audio element.
         form(name='volume')
           button.button.play-pause Play/Pause Preview

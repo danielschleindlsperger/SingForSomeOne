@@ -59,7 +59,7 @@ $(document).ready(function() {
     },
     onSelect: function(suggestion) {
       requestData = suggestion.data;
-        $('.stand-by').show();
+      $('.stand-by').show();
       $.ajax({
         url: '/search',
         type: 'GET',
@@ -69,6 +69,7 @@ $(document).ready(function() {
           $('.stand-by').hide();
           $('.lyrics').html("<h2>'" + suggestion.data.songName + "' - " + suggestion.data.artistName);
           $('.lyrics').append(currentLyrics);
+          var isPlaying = false;
         },
         error: function(res) {
           console.log('There was an error');
