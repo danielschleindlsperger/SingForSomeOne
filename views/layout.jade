@@ -3,6 +3,7 @@ html(lang="en")
   head
     title SingForSomeone
     meta(name='viewport', content='width=device-width', initial-scale='1')
+    meta(charset='utf-8')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css')
     link(rel='stylesheet', href='/styles/style.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans', type='text/css')
@@ -28,7 +29,14 @@ html(lang="en")
           input(id='volume', type='range', value='25', min='0', max='100', step='1')
           label(for='volume') Volume
       div.small-12.large-9.columns
-          p.lyrics
+        div.stand-by
+          p Fetching Lyrics for you. Please stand by.
+          div.cssload-thecube
+            div.cssload-cube.cssload-c1
+            div.cssload-cube.cssload-c2
+            div.cssload-cube.cssload-c4
+            div.cssload-cube.cssload-c3
+        p.lyrics
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
     script(src='/js/global.js')
     script(src='/js/audioplayer.js')

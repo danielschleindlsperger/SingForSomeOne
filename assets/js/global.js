@@ -1,5 +1,6 @@
 var requestData = {};
 $(document).ready(function() {
+  $('.stand-by').hide();
   $(document).on('click', 'input[type=text]', function() {
     this.select();
   });
@@ -58,12 +59,15 @@ $(document).ready(function() {
     },
     onSelect: function(suggestion) {
       requestData = suggestion.data;
+        $('.stand-by').show();
       $.ajax({
         url: '/search',
         type: 'GET',
         data: requestData,
         success: function(res) {
           var currentLyrics = escapeJSON(res);
+          $('.stand-by').hide();
+          $('.lyrics').html("<h2>'" + suggestion.data.songName + "' - " + suggestion.data.artistName);
           $('.lyrics').append(currentLyrics);
         },
         error: function(res) {
@@ -77,7 +81,6 @@ $(document).ready(function() {
       $('#player').attr({
         src: suggestion.data.previewUrl
       });
-      $('.lyrics').html("<h2>'" + suggestion.data.songName + "' - " + suggestion.data.artistName);
     }
   });
 });
