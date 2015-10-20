@@ -10,18 +10,19 @@ var SongController = {
       followRedirect: true,
       maxRedirects: 10
     }, function(error, response, body) {
-      if (!error && response.statusCode == 200){
+      if (!error && response.statusCode == 200 && body.err !== "not found") {
+        // console.log("response sent. contains: ", body.lyric);
         return res.send(body.lyric);
-      }else{
-        return res.send("An Error occured and we couldn't retrieve any lyrics");
+      } else {
         console.log('Http error: ' + error + '\n' + 'Api response error: ' + body.err);
+        return res.notFound("An Error occured and we couldn't retrieve any lyrics");
       }
     }).on('error', function(err) {
       console.log(err);
       return res.send("Can't find lyrics");
     });
   },
-  advancedSearch: function(req, res){
+  advancedSearch: function(req, res) {
     return res.send('Feature coming soon!');
   }
 };

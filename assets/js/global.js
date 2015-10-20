@@ -74,7 +74,9 @@ $(document).ready(function() {
           var isPlaying = false;
         },
         error: function(res) {
+          $('.stand-by').hide();
           console.log('There was an error');
+          $('.lyrics').append("We couldn\'t fetch any lyrics for this song. Sorry about that.");
         }
       });
       $('.album-img').attr({
