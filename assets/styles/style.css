@@ -36,8 +36,13 @@ album-img, #volume {
 .github .text-logo {
   max-width: 4rem;
 }
+.github img.logo:hover {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
 
 /* Autocomplete suggestion rows for input search */
+
 .autocomplete-suggestions {
   border: 1px solid #999;
   background: #FFF;
@@ -64,6 +69,7 @@ album-img, #volume {
 }
 
 /* CSS Loading animation from http://cssload.net/ */
+
 .cssload-thecube {
   width: 73px;
   height: 73px;
