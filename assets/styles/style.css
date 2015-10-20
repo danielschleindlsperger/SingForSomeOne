@@ -23,6 +23,21 @@ album-img, #volume {
 .offset {
   margin-top: 2rem;
 }
+.github {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.github .logo {
+  max-width: 2rem;
+  max-height: 2rem;
+  margin: 1rem;
+}
+.github .text-logo {
+  max-width: 4rem;
+}
+
+/* Autocomplete suggestion rows for input search */
 .autocomplete-suggestions {
   border: 1px solid #999;
   background: #FFF;
