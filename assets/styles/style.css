@@ -40,6 +40,9 @@ album-img, #volume {
   -webkit-filter: invert(1);
   filter: invert(1);
 }
+.play-pause {
+  width: 100%;
+}
 
 /* Autocomplete suggestion rows for input search */
 

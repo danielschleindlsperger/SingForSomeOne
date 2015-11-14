@@ -1,20 +1,23 @@
-var isPlaying = false;
 $(document).ready(function() {
   var player = document.getElementById('player');
-  var slider = document.getElementById('volume');
+  var volumeSlider = document.getElementById('volume');
 
   // Player play/pause toggle on button click
   $('.play-pause').click(function() {
-    if (isPlaying === false) {
+    if (player.paused) {
       player.play();
     } else {
       player.pause();
     }
-    isPlaying = !isPlaying;
   });
 
+  // Initialize volume when audio is ready to play
+  player.addEventListener('canplay', function() {
+    player.volume = volumeSlider.value / volumeSlider.max;
+  }, false);
+
   // Volume change with slider
-  $(slider).on("input change", function() {
-    player.volume = slider.value / slider.max;
+  $(volumeSlider).on("input change", function() {
+    player.volume = volumeSlider.value / volumeSlider.max;
   });
 });

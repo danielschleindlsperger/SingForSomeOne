@@ -1,9 +1,9 @@
 var requestData = {};
 $(document).ready(function() {
   $('.stand-by').hide();
-  $(document).on('click', 'input[type=text]', function() {
-    this.select();
-  });
+  //$(document).on('click', 'input[type=text]', function() {
+  //  this.select();
+  //});
   $('button').click(function(evt) {
     evt.preventDefault();
   });
@@ -70,7 +70,7 @@ $(document).ready(function() {
         });
       }
       requestData = results.suggestions[0].data;
-      console.log("Request data: ", requestData);
+      // console.log("Request data: ", requestData);
       return results;
     },
     onSelect: function(suggestion) {
