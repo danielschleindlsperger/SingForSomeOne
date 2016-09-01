@@ -15,7 +15,7 @@ var SongController = {
         return res.send(body.lyric);
       } else {
         console.log('Http error: ' + error + '\n' + 'Api response error: ' + body.err);
-        return res.notFound("An Error occured and we couldn't retrieve any lyrics");
+        return res.notFound("An Error occurred and we couldn't retrieve any lyrics");
       }
     }).on('error', function(err) {
       console.log(err);
